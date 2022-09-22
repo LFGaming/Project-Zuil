@@ -5,10 +5,10 @@ feedback = str(input("Wat was je ervaring met het station? "))
 if name == "":
     print("Anoniem")
 else:
-    print("Naam " + name)
+    print(f"Naam: {name}")
 
 if len(feedback) >= 140:
     print("Te veel letters")
 else:
-    print("Gaf als feedback: " + feedback)
+    print(f"Gaf als feedback: {feedback}")
 # %%
