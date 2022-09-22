@@ -1,5 +1,5 @@
 #%%
-name = str(input("Wat is je naam? "))
+name = str(input("Wat is je naam? (optioneel) "))
 feedback = str(input("Wat was je ervaring met het station? "))
 
 if name == "":
