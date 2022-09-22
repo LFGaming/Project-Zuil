@@ -11,4 +11,8 @@ if len(feedback) >= 140:
     print("Te veel letters")
 else:
     print(f"Gaf als feedback: {feedback}")
+
+with open('scheldwoorden.txt') as f:
+    if feedback in f.read():
+        print("Er zit een scheldwoord in de feedback")
 # %%
