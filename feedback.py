@@ -7,7 +7,7 @@ if name == "":
 else:
     print("Naam " + name)
 
-if len(feedback) >= 100:
+if len(feedback) >= 140:
     print("Te veel letters")
 else:
     print("Gaf als feedback: " + feedback)
