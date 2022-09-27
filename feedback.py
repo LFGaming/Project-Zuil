@@ -13,9 +13,12 @@ def response(name, feedback):
     else:
         print(f"Gaf als feedback: {feedback}")
 
-    with open('scheldwoorden.txt') as f:
-        if feedback or name in f.read():
+    with open('scheldwoorden.txt', 'r') as f:
+        if feedback in f.read():
             print("Er zit een scheldwoord in de feedback of de naam")
+        else:
+            with open('feedbacks.txt', 'a') as t:
+                t.write(f"Naam: {name} \n\nFeedback: {feedback}\n")
 
 r = response(name, feedback)
 
