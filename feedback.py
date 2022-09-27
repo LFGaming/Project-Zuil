@@ -15,4 +15,6 @@ else:
 with open('scheldwoorden.txt') as f:
     if feedback in f.read():
         print("Er zit een scheldwoord in de feedback")
+
+# scheldwoorden komen van https://www.dutchmultimedia.nl/scheldwoordenboek-1-000-den-nederlandse-scheldwoorden/
 # %%

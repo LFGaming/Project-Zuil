@@ -1,6 +1,3 @@
-https://www.dutchmultimedia.nl/scheldwoordenboek-1-000-den-nederlandse-scheldwoorden/
-
-A
 aambeienbeffer
 aambeienlikker
 aangekleed stuknageboorte
@@ -99,7 +96,6 @@ augurkenneuker
 augurklul
 autocraat
 avocadoneuker
-B
 baardaap
 baarmoeder
 baarmoederbuikwandschimmel
@@ -338,8 +334,6 @@ bunzing
 bushalte hoertje
 but
 buttfucker
-
-C
 cabaretlul
 camperhoer
 campinghoer
@@ -370,8 +364,6 @@ curry kop
 cyberhoer
 cyberslet
 cybersnol
-
-D
 dakduif
 dakhaas
 dameskapper
@@ -448,8 +440,6 @@ dwaas
 dwarrel
 dweil
 dwergpapegaai
-
-E
 ectoplastisch bijprodukt
 edeldarm
 eekhoornneuker
@@ -484,8 +474,6 @@ ezelskop
 ezelskut
 ezelslul
 ezelsoor
-
-F
 fabricagefout
 falliete tiet
 fibo
@@ -524,8 +512,6 @@ frikandel
 frisbie
 fucker
 fuckface
-
-G
 gajeskop
 galbak
 galgenaas
@@ -629,8 +615,6 @@ grindtegel
 groeiknuppel
 gulpruiker
 gulpsnuiver
-
-H
 haagse wim
 haaibaai
 haas
@@ -720,8 +704,6 @@ hurksnol
 huurdoos
 hyperkinetische …
 hypocriet
-
-I
 idioot
 ijslul
 imbeciel
@@ -757,8 +739,6 @@ joker
 JP
 judas
 juleslikker
-
-K
 kaalgeschoren …
 kaalhoofdige kontenbonker
 kaalkop
@@ -790,6 +770,7 @@ kamerolifant
 kanaak
 kanalenveger
 kanarieneuker
+kanker
 kannibaal
 kansloze …
 karpaten-papoea
@@ -997,8 +978,6 @@ kwast
 kwezel
 kwibus
 kwispelkont
-
-L
 laagvliegende strondbaviaan
 labellopotjes pijper
 lafaard
@@ -1081,8 +1060,6 @@ lullenvreter
 lullo
 lulskie
 lulzuiger
-
-M
 maaghoer
 maaghond
 maagpens
@@ -1150,8 +1127,6 @@ muppet
 murk
 muts
 mutsenplukker
-
-N
 naadhopper
 naaiaap
 naaidoos
@@ -1193,8 +1168,6 @@ nietsnut
 nikker
 nooduitgang
 nul
-
-O
 oelewapper
 oen
 oester
@@ -1241,8 +1214,6 @@ ossenkut
 ouwe rukker
 ouwe trekezel
 overrijpe puist
-
-P
 paard
 paardenbeffer
 paardenkut
@@ -1441,12 +1412,8 @@ puta
 putjesschepper
 putlul
 pyromaan
-
-Q
 quasimodo
 quickhoer
-
-r
 racechinees
 ragkut
 ragnicht
@@ -1522,8 +1489,6 @@ rukkameel
 rukker
 rukmuts
 ruktijger
-
-S
 sabberkut
 sapcentrifuge
 satan
@@ -1782,8 +1747,6 @@ super …
 superkut
 surfplank
 swiebie
-
-T
 takkehoer
 takkenteef
 takkentrut
@@ -1877,8 +1840,6 @@ tyfuslijer
 tyfuslul
 tyfustubbie
 tyfustukker
-
-U
 uienreet
 uiersnuiver
 uilskuiken
@@ -1901,8 +1862,6 @@ uitlaatneuker
 urinemonster
 urinespuiter
 urinoirlikker
-
-V
 vaginale …
 vaginalehangflapper
 vaginaplakker
@@ -1968,8 +1927,6 @@ vuillak
 vulkaankop
 vullis
 vuurtoren
-
-W
 wafelijzer
 wanhopige darmrukker
 wannabee
@@ -2003,17 +1960,11 @@ wout
 wrattenkont
 wrattenkop
 wrattenschimmel
-
-X
 Xylofoonneuker
-
-Y
 yogateef
 yoghurtpisser
 yoghurtventje
 yoyolul
-
-Z
 zaadbal
 zaadcontainer
 zaadheks
