@@ -14,8 +14,8 @@ def response(name, feedback):
         print(f"Gaf als feedback: {feedback}")
 
     with open('scheldwoorden.txt') as f:
-        if feedback in f.read():
-            print("Er zit een scheldwoord in de feedback")
+        if feedback or name in f.read():
+            print("Er zit een scheldwoord in de feedback of de naam")
 
 r = response(name, feedback)
 
