@@ -19,23 +19,23 @@ aarsworm
 aarszweetsmurf
 aasgier
 abortuskind
-achterbakse …
+achterbakse
 achtercrosser
 achterlader
 achterlijk gebakkie
-achterlijke …
+achterlijke
 achterlijke zoetwatermossel
 achterpoter
 adder
 addergebroed
 afbak hoer
-afgebefte …
-afgedankte …
-afgekeurd …
-afgekloven …
+afgebefte
+afgedankte
+afgekeurd
+afgekloven
 Afgelebberde…
-afgelikte …
-afgeneukte …
+afgelikte
+afgeneukte
 aftreksel
 afzakker
 akrobaat
@@ -87,7 +87,7 @@ appelflap
 appelzwijn
 archeologisch kontfossiel
 armoedzaaier
-arrogante …
+arrogante
 asbak
 aso
 asshole
@@ -113,7 +113,7 @@ bafaap
 baffer
 bafkoning
 bafstaaf
-bagger …
+bagger
 baggeraar
 baggerboer
 baggerhoer
@@ -142,7 +142,7 @@ banaanspruitslet
 banaanspuitslet
 bananenbeffer
 bandiet
-bange …
+bange
 bangerd
 bangerik
 banjer
@@ -162,7 +162,7 @@ beast
 bedpisser
 beer
 beerputworm
-bef …
+bef
 befbever
 beffende schaamlip
 befkikker
@@ -173,27 +173,27 @@ befslet
 befsmurf
 befsnol
 beftekkel
-behaarde …
+behaarde
 bejaardehoer
-bekakte …
+bekakte
 belhamel
 bengel
 bereden politieagent
-beren …
+beren
 berenanus
 berenlul
 berggeitneuker
 bermslet
 beroeps ww’er
-bescheten …
-beschimmelde …
+bescheten
+beschimmelde
 beschuitlul
-besmettelijke …
+besmettelijke
 betweter
 beunhaas
 beverbeffer
 bezem
-bezopen …
+bezopen
 big
 bigbaffer
 bigbeffer
@@ -213,7 +213,7 @@ billekip
 billenbatser
 billenbeffer
 billenrijder
-bilnaad …
+bilnaad
 bilnaadfanaat
 bilnaadkandidaat
 bilnaadpiraat
@@ -234,7 +234,7 @@ bladluis
 blafaap
 bleekscheet
 blob
-bloed …
+bloed
 bloedhoer
 bloedhond
 bloedpoepende indianenhoer
@@ -346,7 +346,7 @@ centenschraper
 centromeerloze chromatiet
 champignon
 chatnicht
-choco …
+choco
 chocoladeridder
 chocoprins
 cholerabacterie
@@ -380,12 +380,12 @@ dekhengst
 dekslet
 dekzwabber
 deprikut
-diaree …
+diaree
 dijkhoer
 dikhoofd
-dikke …
+dikke
 dikke pad
-dikke vieze …
+dikke vieze
 dikkedrek
 dikkie dik
 dikkop
@@ -402,7 +402,7 @@ dodo
 doedelzak
 doe-het-zelf-hoer
 dombo
-domme …
+domme
 domoor
 doodrijder
 doolhofschijter
@@ -410,7 +410,7 @@ doorgelekteprikker
 doos
 drankorgel
 drempelkut
-driedubbeldoorgedraaide …
+driedubbeldoorgedraaide
 drilboor pastoor
 droeftoeter
 droge visjes eter
@@ -430,7 +430,7 @@ droplul
 druiloor
 druiper
 druipscheet
-dubbeldoorgehaalde …
+dubbeldoorgehaalde
 duckfucker
 duif
 duikbootcommissaris
@@ -446,7 +446,7 @@ eeltneus
 eend
 eendeneikel
 éénoog
-egocentrische …
+egocentrische
 egoist
 eiermix imitatie
 eierzak
@@ -528,17 +528,17 @@ gatridder
 gatspier musketier
 gatzitter
 gebakje
-gebefte …
+gebefte
 gebefte anuskanibaal
-geblondeerde …
+geblondeerde
 geblondeerde kuthoer
 gebochelte
-gecastreerde …
+gecastreerde
 gedrogt
 geek
 geflambeerde boomschorsbeffer
 geflambeerde landrot
-geflipte …
+geflipte
 gehaktbal
 geile aap
 geit
@@ -558,7 +558,7 @@ gelukte abortus
 genetische foutje
 gepekop
 geperforeerd geufdier
-gepijpte …
+gepijpte
 geschoren befpoedel
 gespierde spijker
 gespuis
@@ -579,12 +579,12 @@ gleufridder
 gleufruiker
 glibberkut
 gnoe
-goddeloze …
+goddeloze
 goedkope circushoer
 goof
 gootsteenneuker
 gordijnenkut
-gore …
+gore
 gorgeldrank
 graaikraai
 grafbak
@@ -618,7 +618,7 @@ haagse wim
 haaibaai
 haas
 hakker
-halfuitgekakte …
+halfuitgekakte
 halve gare
 halve maan rover
 halve zool
@@ -648,7 +648,7 @@ hemelpiloot
 hemelpiraat
 henkjansmit
 hermafrodiet
-heroine …
+heroine
 hersenloze zaadcel
 hertensnikkel
 hielenlikker
@@ -673,7 +673,7 @@ holtor
 holtorneuker
 homo
 homofiel
-homofiele …
+homofiele
 homohoer
 homojager
 homokut
@@ -701,23 +701,23 @@ huppelkut (-je)
 huppeltrut
 hurksnol
 huurdoos
-hyperkinetische …
+hyperkinetische
 hypocriet
 idioot
 ijslul
 imbeciel
-imbeciele …
-imitatie …
-impotente …
+imbeciele
+imitatie
+impotente
 impotentietor
-in de kont geneukte …
+in de kont geneukte
 inboorling
-infantiele …
-ingeblikte …
-ingegroeide …
+infantiele
+ingeblikte
+ingegroeide
 ingegroeide konthaar
 ingevroren visstick
-iniminimaximale …
+iniminimaximale
 inktlul
 inktviskut
 insekt
@@ -738,7 +738,7 @@ joker
 JP
 judas
 juleslikker
-kaalgeschoren …
+kaalgeschoren
 kaalhoofdige kontenbonker
 kaalkop
 kaapstander
@@ -771,7 +771,7 @@ kanalenveger
 kanarieneuker
 kanker
 kannibaal
-kansloze …
+kansloze
 karpaten-papoea
 kasplant
 katoenplukker
@@ -826,7 +826,7 @@ klootkip
 klootveter
 klootviool
 klootzak
-klote …
+klote
 klotenbibber
 klotenklapper
 klotenklopper
@@ -884,7 +884,7 @@ kommaneuker
 konijnennaaier
 konijnenneuker
 kontcoureur
-kontcrossende …
+kontcrossende
 kontenbonker
 kontenketser
 kontenklever kever
@@ -941,7 +941,7 @@ krotekoker
 kruikenkop
 kruizensnuiver
 kut
-kut …
+kut
 kut met weerhaken
 kutaap
 kutdeksel
@@ -1029,10 +1029,10 @@ loempialul
 loempiavouwer
 logaritme
 lompe
-lompe …
+lompe
 lompe lul
 lookalike
-loopse …
+loopse
 lord of the strings
 lorrekut
 loser
@@ -1069,13 +1069,13 @@ mallerd
 malloot
 mannenprakker
 manwijf
-marginale …
+marginale
 masturbarie
 matennaaier
 meeëter
 meeloper
 megafallus
-megalomane …
+megalomane
 melkmuil
 mellow teef
 meloen
@@ -1092,7 +1092,7 @@ minimumloon hoer
 minipik
 minkukel
 miskraam
-mislukte …
+mislukte
 mislukte barbiepop
 mislukte embrio
 mislukte miskraam
@@ -1180,7 +1180,7 @@ olifantenlul
 olifantenschimmelslurf
 omabeffer
 omgezakte poot
-omhooggevallen …
+omhooggevallen
 onderbroekenverzamelaar
 ondergescheten vuilnisvrouw
 onderontwikkelde zeekomkommer
@@ -1258,7 +1258,7 @@ pedomeester
 pedopenis
 pedopyrofilatomaan
 pekelteef
-penis …
+penis
 Penis Aqua Rosa (lulletje rozenwater in het Latijn)
 Penis Papierus Placsus (lul-de-behanger in het Latijn)
 penisafhakker
@@ -1316,7 +1316,7 @@ pinopijper
 pinopijpvogel
 pipo
 piraat
-pis …
+pis
 pisbakkenpoot
 pisbakneuker
 pisgezicht
@@ -1377,7 +1377,7 @@ potvis
 praatjesmaker
 pretletter
 pretslet
-preutse …
+preutse
 primitieveling
 printernaaier
 proefbuisbaby
@@ -1503,15 +1503,15 @@ schapenzak
 scharminkel
 scharrelaar
 schavuit
-scheef geneukte …
-scheel geneukte …
-schele …
+scheef geneukte
+scheel geneukte
+schele
 schele dakduif
 schelm
 scheve aap
 scheve kutneuker
 scheve lavabo
-schijt …
+schijt
 schijter
 schijterd
 schijthoer
@@ -1523,7 +1523,7 @@ schijtluis
 schijtmongool
 schijtwijf
 schildknaap
-schimmelige …
+schimmelige
 schimmelkaas
 schimmelkont
 schimmelkut
@@ -1639,12 +1639,12 @@ speenvarken
 spekgat
 speklap
 speknek
-sperma …
+sperma
 spermacel
 spermacontainer
 spermahoer
 spermakut
-spermaslikkende …
+spermaslikkende
 spermaspons
 spermaspugende ballenbatser
 spermatozoïde
@@ -1672,7 +1672,7 @@ stereomongool
 sterreneter
 stierenbeffer
 stierenlul
-stink …
+stink
 stinkaap
 stinkbeer
 stinkbom
@@ -1706,7 +1706,7 @@ strandhoer
 strandschuimer
 stringwing
 strompstomper
-stront …
+stront
 strontbaffer
 strontbaviaan
 strontboorder
@@ -1735,14 +1735,14 @@ stuk ectoplasma
 stuk straatvuil
 stuk stront
 suckhead
-sufgerukte …
+sufgerukte
 sufkonijn
 sufkut
 suflul
 sukkel
 sukkelaar
 sul
-super …
+super
 superkut
 surfplank
 swiebie
@@ -1771,11 +1771,11 @@ teletubiezuiger
 tempelslet
 tepelbaviaan
 tepelhaarbeffer
-tepelloze …
+tepelloze
 tepeltrut
 tepelwrat
 tergdwerg
-tering …
+tering
 teringtubbie
 terrorist
 testbeeld
@@ -1800,7 +1800,7 @@ tomaat
 toogpisser
 toonbanksloerie
 touwtyphusleier
-transsexuele …
+transsexuele
 trapleuning
 travestiet
 travo
@@ -1832,7 +1832,7 @@ turnflikker
 tuthola
 tutneus
 twanyboy
-tweedehands …
+tweedehands
 tyfusaap
 tyfushoer
 tyfuslijer
@@ -1842,32 +1842,32 @@ tyfustukker
 uienreet
 uiersnuiver
 uilskuiken
-uit de baarmoeder afgerukte …
-uit de baarmoeder geslingerde …
+uit de baarmoeder afgerukte
+uit de baarmoeder geslingerde
 uit de baarmoeder getrokken…
-uit de hol gekropen …
-uit de klei getrokken …
+uit de hol gekropen
+uit de klei getrokken
 uitgedroogd theezakje
 uitgeknepen perzik
 uitgekotste kamelenkut
 uitgelekte theezak
-uitgemergelde …
-uitgeneukte …
-uitgeperste …
-uitgerukte …
-uitgescheten …
-uitgewoonde …
+uitgemergelde
+uitgeneukte
+uitgeperste
+uitgerukte
+uitgescheten
+uitgewoonde
 uitlaatneuker
 urinemonster
 urinespuiter
 urinoirlikker
-vaginale …
+vaginale
 vaginalehangflapper
 vaginaplakker
 vaginavarken
 vaginavochtabsorbeerder
 vampier
-van de pot gerukte …
+van de pot gerukte
 vandaal
 varken
 varkenshol
@@ -1880,21 +1880,21 @@ veenslet
 veeverkrachter
 vegetarier
 verkrachter
-verlepte …
+verlepte
 vermicelli-eter
-verneukte …
+verneukte
 veronica-abbonee
 verpleger
 verrader
-verrekte …
+verrekte
 verwekfout
 vetnek
 vette teef
 vetvlek
 vetzak
 vibrator
-vies …
-vieze vuile ….
+vies
+vieze vuile.
 viezerik
 vingerplant
 violenkut
@@ -1921,7 +1921,7 @@ vrijbuiter
 vrottepelikaan
 vrouwenprakker
 vtm’er
-vuile …
+vuile
 vuillak
 vulkaankop
 vullis
