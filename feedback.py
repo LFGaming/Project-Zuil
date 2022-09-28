@@ -18,7 +18,7 @@ def response(name, feedback):
             print("Er zit een scheldwoord in de feedback of de naam")
         else:
             with open('feedbacks.txt', 'a') as t:
-                t.write(f"Naam: {name} \nFeedback: {feedback}\n")
+                t.write(f"Naam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
 
 r = response(name, feedback)
 
