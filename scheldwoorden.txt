@@ -1765,7 +1765,7 @@ tegelteef
 tegelveger
 tekkelbeffer
 teletubbie
-teletubbie ,,,
+teletubbie
 teletubbiekut
 teletubiezuiger
 tempelslet
