@@ -17,7 +17,7 @@ def response(name, feedback):
         if feedback in f.read():
             print("Er zit een scheldwoord in de feedback of de naam, het wordt naar de check gestuurd")
             with open('feedback_check.txt', 'a') as g:
-             g.write(f"Naam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
+                g.write(f"Naam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
         else:
             with open('feedbacks.txt', 'a') as t:
                 t.write(f"Naam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
