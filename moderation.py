@@ -7,6 +7,6 @@ def moderation():
             print(n.strip())
         if keuzen == "goed":
             with open('feedbacks.txt', 'a') as t:
-                t.write(f"")
+                t.write(n)
 
 r = moderation()
