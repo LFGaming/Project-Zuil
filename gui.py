@@ -3,12 +3,33 @@ import tkinter as tk
 
 def show_entry_fields():
     print(f"First Name: {input1.get()} \nLast Name: {input2.get()}")
+    if input1.get() == "":
+        print("Anoniem")
+    else:
+        print(f"Naam: {input1.get()}")
+
+    if len(input2.get()) >= 140:
+        print("Te veel letters")
+    else:
+        print(f"Gaf als feedback: {input2.get()}")
+
+    with open('scheldwoorden.txt', 'r') as f:
+        if input2.get() in f.read():
+            print(
+                "Er zit een scheldwoord in de feedback of de naam, het wordt naar de check gestuurd")
+            with open('feedback_check.txt', 'a') as g:
+                g.write(
+                    f"Naam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
+        else:
+            with open('feedbacks.txt', 'a') as t:
+                t.write(
+                    f"Naam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
 
 # name = str(input("Wat is je naam? (optioneel) "))
 # feedback = str(input("Wat was je ervaring met het station? "))
 
 
-def response(name, feedback):
+'''def response(name, feedback):
     if name == "":
         print("Anoniem")
     else:
@@ -29,7 +50,7 @@ def response(name, feedback):
         else:
             with open('feedbacks.txt', 'a') as t:
                 t.write(
-                    f"Naam: {name.get()} \nFeedback: {feedback.get()}\n \n --------------------------- \n")
+                    f"Naam: {name.get()} \nFeedback: {feedback.get()}\n \n --------------------------- \n")'''
 
 
 master = tk.Tk()
@@ -50,16 +71,16 @@ tk.Button(master,
                                     column=0,
                                     sticky=tk.W,
                                     pady=4)
-'''tk.Button(master,
+tk.Button(master,
           text='Show', command=show_entry_fields).grid(row=3,
                                                        column=1,
                                                        sticky=tk.W,
-                                                       pady=4)'''
-tk.Button(master,
-          text='Show', command=response(input1, input2)).grid(row=3,
+                                                       pady=4)
+'''tk.Button(master,
+          text='test', command=response(input1, input2)).grid(row=4,
                                                        column=1,
                                                        sticky=tk.W,
-                                                       pady=4)
+                                                       pady=4)'''
 
 
 tk.mainloop()
