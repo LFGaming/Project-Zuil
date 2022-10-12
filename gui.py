@@ -15,7 +15,7 @@ def response():
     else:
         print(f"Gaf als feedback: {input2.get()}")
 
-    with open('scheldwoorden.txt', 'r') as f:
+    with open('scheldwoorden_kort.txt', 'r') as f:
         if input2.get() in f.read():
             print(
                 "Er zit een scheldwoord in de feedback of de naam, het wordt naar de check gestuurd")
