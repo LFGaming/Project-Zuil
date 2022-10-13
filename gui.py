@@ -27,12 +27,10 @@ def response():
             with open('feedback_check.txt', 'a') as g:
                 g.write(
                     f"{vandaag}\nBij station {station}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
-                file.close()
         else:
             with open('feedbacks.txt', 'a') as t:
                 t.write(
                     f"{vandaag}\nBij station {station}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
-                file.close()
 
 
 master = tk.Tk()
