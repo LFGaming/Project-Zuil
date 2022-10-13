@@ -1,7 +1,12 @@
 import tkinter as tk
 from datetime import date
+import random
 
 vandaag = date.today()
+
+with open("stations.txt","r") as file:
+    lines = file.read().splitlines()
+    station = random.choice(lines)
 
 def response():
     print(f"First Name: {input1.get()} \nLast Name: {input2.get()}")
@@ -21,11 +26,13 @@ def response():
                 "Er zit een scheldwoord in de feedback of de naam, het wordt naar de check gestuurd")
             with open('feedback_check.txt', 'a') as g:
                 g.write(
-                    f"{vandaag}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
+                    f"{vandaag}\nBij station {station}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
+                file.close()
         else:
             with open('feedbacks.txt', 'a') as t:
                 t.write(
-                    f"{vandaag}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
+                    f"{vandaag}\nBij station {station}\nNaam: {input1.get()} \nFeedback: {input2.get()}\n \n --------------------------- \n")
+                file.close()
 
 
 master = tk.Tk()
