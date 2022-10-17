@@ -9,7 +9,7 @@ with open("stations.txt","r") as file:
     station = random.choice(lines)
 
 def response():
-    print(f"First Name: {input1.get()} \nLast Name: {input2.get()}")
+    print(f"First Name: {input1.get()} \n Feedback: {input2.get()}")
     if input1.get() == "":
         print("Anoniem")
     else:
@@ -37,7 +37,7 @@ master = tk.Tk()
 tk.Label(master,
          text="First Name").grid(row=0)
 tk.Label(master,
-         text="Last Name").grid(row=1)
+         text="Feedback").grid(row=1)
 
 input1 = tk.Entry(master)
 input2 = tk.Entry(master)
