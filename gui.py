@@ -1,8 +1,8 @@
 import tkinter as tk
-from datetime import date
+import datetime
 import random
 
-vandaag = date.today()
+vandaag = datetime.datetime.today()
 
 with open("stations.txt","r") as file:
     lines = file.read().splitlines()
