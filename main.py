@@ -3,10 +3,10 @@ import datetime
 import random
 import psycopg2
 
-
-connection_string = "host='localhost' dbname='fabriek' user='postgres' password='geheim'"
-conn = psycopg2.connect(connection_string)  # get a connection with the database
-cursor = conn.cursor() # 
+#id = input("Unique id: ")
+#name = input("Name: ")
+#bericht = input("Bericht: ")
+#tijd = input("Tijd: ")
 
 
 vandaag = datetime.datetime.today()
@@ -66,5 +66,25 @@ tk.Button(master,
 
 tk.mainloop()
 
-
 #r = response(input1, input2)
+
+# Database
+
+id = input("Unique id: ")
+name = input1.get()
+bericht = input2.get()
+location = station
+date = vandaag
+
+connection_string = "host='localhost' dbname='proja' user='postgres' password='PW'"
+
+conn = psycopg2.connect(connection_string) 
+cursor = conn.cursor()
+
+query = """INSERT INTO bericht (idnummer, naam, bericht, date, )
+           VALUES (%s, %s, %s);"""      # Always use %s as a placeholder. Pyscopg will
+                                        # convert the datatype and add quotes if necessary!
+data = (id, name, bericht)#, tijd)
+cursor.execute(query, data)             # The second parameter must be list or tuple
+conn.commit()
+conn.close()
