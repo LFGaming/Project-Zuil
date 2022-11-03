@@ -30,3 +30,4 @@ create table stationvoorz(antal integer not null,
 						 
 
 insert into moderator VALUES(1234, 'luke', 'luke@mod.nl')
+insert into moderator VALUES(1235, 'tim', 'tim@mod.nl')
