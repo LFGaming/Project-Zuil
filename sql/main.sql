@@ -5,9 +5,8 @@ drop table if exists stationvoorz CASCADE;
 drop table if exists station CASCADE;
 
 create table moderator(modnummer integer not null primary key,
-					  email varchar(255),
 					  naam varchar(255),
-					  tijd TIME);
+					  email varchar(255));
 					  
 create table station(stationnummer integer not null primary key,
 					naam varchar(255));
@@ -29,3 +28,5 @@ create table stationvoorz(antal integer not null,
 						 FOREIGN key(stationnummer) REFERENCES station(stationnummer),
 						 foreign key(voorznummer) references voorzieningen(voorznummer));
 						 
+
+insert into moderator VALUES(1234, 'luke', 'luke@mod.nl')
