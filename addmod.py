@@ -3,7 +3,7 @@ import psycopg2
 id = input("ID: ")
 name = input("Naam: ")
 email = input("Email: ")
-connection_string = "host='localhost' dbname='proja' user='postgres' password='PW'"
+connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
 
 conn = psycopg2.connect(connection_string) 
 cursor = conn.cursor()
