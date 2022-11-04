@@ -5,9 +5,9 @@ import psycopg2
 
 vandaag = datetime.datetime.today()
 
-with open("stations.txt","r") as file:
-    lines = file.read().splitlines()
-    station = random.choice(lines)
+#with open("stations.txt","r") as file:
+#    lines = file.read().splitlines()
+#    station = random.choice(lines)
 
 name = str(input("Wat is je naam? (optioneel) "))
 feedback = str(input("Wat was je ervaring met het station? "))
@@ -15,7 +15,7 @@ feedback = str(input("Wat was je ervaring met het station? "))
 
 #name = input("Naam: ")
 #bericht = input("Bericht: ")
-stationnaam = str(station)
+stationnummer = random.randint(1,3)
 tijd = str(vandaag)
 
 def response():
@@ -33,7 +33,7 @@ def response():
     with open('scheldwoorden_kort.txt', 'r') as f:
         if feedback in f.read():
             print(
-                "Er zit een scheldwoord in de feedback of de naam, het wordt afgekeurt.")
+                "Er zit een scheldwoord in de feedback of de naam, het wordt afgekeurd.")
         else:
             # put message in database
 
@@ -42,10 +42,10 @@ def response():
             conn = psycopg2.connect(connection_string) 
             cursor = conn.cursor()
 
-            query = """INSERT INTO bericht (naam, bericht, stationnaam, tijd)
+            query = """INSERT INTO bericht (naam, bericht, stationnummer, tijd)
                     VALUES (%s, %s, %s, %s);"""      # Always use %s as a placeholder. Pyscopg will
                                                     # convert the datatype and add quotes if necessary!
-            data = (name, feedback, stationnaam, tijd)
+            data = (name, feedback, stationnummer, tijd)
             cursor.execute(query, data)             # The second parameter must be list or tuple
             conn.commit()
             conn.close()
@@ -68,15 +68,16 @@ def read():
                                             # convert the datatype and add quotes if necessary!
     cursor.execute(query)
     print("Selecting rows from mobile table using cursor.fetchall")
-    mobile_records = cursor.fetchall()
+    records = cursor.fetchall()
 
     print("Print each row and it's columns values")
-    for row in mobile_records:
-        print("Naam = ", row[0])
-        print("Bericht  = ", row[1])
-        print("Tijd = ", row[2])
-        print("Modnummer = ", row[3])
-        print("Stationnaam = ", row[4], "\n")
+    for row in records:
+        print("IDnummer = ", row[0])
+        print("Naam = ", row[1])
+        print("Bericht  = ", row[2])
+        print("Tijd = ", row[3])
+        print("Modnummer = ", row[4])
+        print("Stationnaam = ", row[5], "\n")
     conn.commit()
     conn.close()
 
