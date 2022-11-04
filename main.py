@@ -37,7 +37,7 @@ def response():
         else:
             # put message in database
 
-            connection_string = "host='localhost' dbname='proja' user='postgres' password='PW'"
+            connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
 
             conn = psycopg2.connect(connection_string) 
             cursor = conn.cursor()
@@ -59,7 +59,7 @@ r = response()
 
 # get message from database
 def read():
-    connection_string = "host='localhost' dbname='proja' user='postgres' password='PW'"
+    connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
 
     conn = psycopg2.connect(connection_string) 
     cursor = conn.cursor()
@@ -67,10 +67,9 @@ def read():
     query = "select * from bericht"      # Always use %s as a placeholder. Pyscopg will
                                             # convert the datatype and add quotes if necessary!
     cursor.execute(query)
-    print("Selecting rows from mobile table using cursor.fetchall")
     records = cursor.fetchall()
 
-    print("Print each row and it's columns values")
+    print("Berichten")
     for row in records:
         print("IDnummer = ", row[0])
         print("Naam = ", row[1])
