@@ -4,6 +4,12 @@ drop table if exists voorzieningen CASCADE;
 drop table if exists stationvoorz CASCADE;
 drop table if exists station CASCADE;
 
+drop table if exists moderator CASCADE;
+drop table if exists station CASCADE;
+drop table if exists voorzieningen CASCADE;
+drop table if exists stationvoorz CASCADE;
+drop table if exists station CASCADE;
+
 create table moderator(modnummer integer not null primary key,
 					  naam varchar(255),
 					  email varchar(255));
@@ -31,3 +37,7 @@ create table stationvoorz(antal integer not null,
 
 insert into moderator VALUES(1234, 'luke', 'luke@mod.nl')
 insert into moderator VALUES(1235, 'tim', 'tim@mod.nl')
+						 
+
+insert into moderator VALUES(1234, 'luke', 'luke@mod.nl');
+insert into moderator VALUES(1235, 'tim', 'tim@mod.nl');
