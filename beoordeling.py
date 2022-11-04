@@ -1,4 +1,5 @@
 import psycopg2
+import datetime
 
 def inloggen():
     
@@ -16,10 +17,10 @@ def inloggen():
     cursor.execute(query, arg)
     records = cursor.fetchone()
     if len(records) == 0:
-        print("U bent nog niet geregistreerd als moderator. Gebruik addmod.py")
+        print("U bent nog niet geregistreerd als moderator. Gebruik addmod.py \n")
         return -1
     else:
-        print(f"Welkom {name} met email: {records[2]}")
+        print(f"Welkom {name} met email: {records[2]} \n")
         modnum = records[0]
         return modnum
 
@@ -46,19 +47,18 @@ def beoordeel(mod):
         print("Tijd = ", row[3])
         print("Modnummer = ", row[4])
         print("Stationnaam = ", row[5], "\n")
-        keuze = input("Goed of fout? ")
+        keuze = input("Goed of fout? (g of f): ")
         if keuze == 'g':
             
-            
-            query = """update bericht set beoordeling = 'goed', modnummer = %s where idnummer = %s"""
-            arg = (mod, str(row[0]))
-            print(type(arg))
+            tijd = datetime.datetime.today()
+            query = """update bericht set beoordeling = 'goed', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
+            arg = (mod, tijd, str(row[0]))
             cursor.execute(query, arg)             # The second parameter must be list or tuple
             
         else:
-
-            query = """update bericht set beoordeling = 'fout', modnummer = %s where idnummer = %s"""
-            arg = (mod, str(row[0]))
+            tijd = datetime.datetime.today()
+            query = """update bericht set beoordeling = 'fout', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
+            arg = (mod, tijd, str(row[0]))
             cursor.execute(query, arg)             # The second parameter must be list or tuple
 
     conn.commit()
