@@ -7,6 +7,7 @@ import tkinter as tk
 
 window = tk.Tk()
 window.title("Stationsscherm")
+#window.iconbitmap("yourimage.ico")
 
 # kies een van de stations
 frm_content = tk.Frame(window)
@@ -41,7 +42,7 @@ frm_voorzieningen = tk.Frame(frm_content)
 frm_voorzieningen.grid(row=2, column=0, columnspan=2, sticky= 'nw')
 tk.Label(frm_voorzieningen, text="Voorzieingen op dit station", font=("Arial", 16), anchor="n").pack() 
 
-img_ov = tk.PhotoImage(file='icons\gimg_ovfiets.png')
+img_ov = tk.PhotoImage(file='icons\img_ovfiets.png')
 
 tk.Label( frm_voorzieningen, image=img_ov).pack(side=tk.LEFT)
 tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT, padx=20)
