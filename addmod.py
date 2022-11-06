@@ -1,5 +1,6 @@
 import psycopg2
 
+# add a moderator into the database
 id = input("ID: ")
 name = input("Naam: ")
 email = input("Email: ")

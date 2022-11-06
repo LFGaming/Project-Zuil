@@ -5,19 +5,24 @@ import psycopg2
 
 vandaag = datetime.datetime.today()
 
-#with open("stations.txt","r") as file:
-#    lines = file.read().splitlines()
-#    station = random.choice(lines)
+#* with open("stations.txt","r") as file:
+#*   lines = file.read().splitlines()
+#*   station = random.choice(lines)
 
+# ask for the name and feedback of the user
 name = str(input("Wat is je naam? (optioneel) "))
 feedback = str(input("Wat was je ervaring met het station? "))
 
 
-#name = input("Naam: ")
-#bericht = input("Bericht: ")
+#*name = input("Naam: ")
+#*bericht = input("Bericht: ")
+
+#choose a station number
 stationnummer = random.randint(1,3)
 tijd = str(vandaag)
 
+# get feedback and check if there are no curse words in it and it isn't longer that 140 characters.
+# if all is correct then send the name, feedback and station number to the database 
 def response():
     print(f"First Name: {name} \n Feedback: {feedback}")
     if name == "":
@@ -50,14 +55,14 @@ def response():
             conn.commit()
             conn.close()
 
-            #with open('feedbacks.txt', 'a') as t:
-            #    t.write(
-            #        f"{vandaag}\nBij station {station}\nNaam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
+            #*with open('feedbacks.txt', 'a') as t:
+            #*    t.write(
+            #*        f"{vandaag}\nBij station {station}\nNaam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
 
 
 r = response()
 
-# get message from database
+# get message from database to see that it worked
 def read():
     connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
 

@@ -8,7 +8,7 @@ import requests, json
 #  & 'C:\Program Files\Inkscape\bin\inkscape.exe'  -w 40 -h 40 .\ov-fiets--small.svg -o .\ov-fiets--small.png
 
 
-
+# get information of the station
 def krijg_station_info(stationnum):
     global pr
     global wc
@@ -33,6 +33,8 @@ def krijg_station_info(stationnum):
     conn.close()
     window.update()
 
+# get the messages from the database
+# set the messages on the screen
 def berichten():
     global frm_berichten
     connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
@@ -51,6 +53,7 @@ def berichten():
     conn.commit()
     conn.close()
 
+# functionality for the next (right) button
 def volgendstation():
     global gekozen_station
     gekozen_station = (gekozen_station +1)
@@ -60,6 +63,7 @@ def volgendstation():
     krijg_station_info(gekozen_station)
     update_screen()
 
+#functionality for the previouse (left) button
 def vorigstation():
     global gekozen_station
     gekozen_station = (gekozen_station -1)
@@ -69,6 +73,8 @@ def vorigstation():
     krijg_station_info(gekozen_station)
     update_screen()
 
+# get weather from openweathermap
+# adding onto https://www.geeksforgeeks.org/python-find-current-weather-of-any-city-using-openweathermap-api/ code
 def weather(stad):
     global current_temperature, current_pressure, current_humidity, weather_description
 
@@ -123,6 +129,7 @@ def weather(stad):
         weather_description = z[0]["description"]
     
 
+# functionality to update the screen so all the text does not get written on top of each other
 def update_screen():
     global current_temperature, current_pressure, current_humidity, weather_description
     global frm_content
@@ -132,8 +139,10 @@ def update_screen():
     
     weather(station)
 
+    # update station name lable 
     lbl_station.config(text=f"Station: {station}")
 
+    # remove all lables
     if lbl_ovfiets:
         lbl_ovfiets.destroy()
     if lbl_toilet:
@@ -143,7 +152,7 @@ def update_screen():
     if lbl_lift:
         lbl_lift.destroy()
 
-
+    # put the right pictures on screen.
     if ovfiets:
         lbl_ovfiets = tk.Label( frm_voorzieningen, image=img_ov)
         lbl_ovfiets.pack(side=tk.LEFT, padx=10)
@@ -160,10 +169,10 @@ def update_screen():
         lbl_toilet = tk.Label( frm_voorzieningen, image=img_toilet)
         lbl_toilet.pack(side=tk.LEFT, padx=10)
 
-
+    # update the weather text
     lbl_weer.config(text = f"{weather_description}\n{current_temperature} graden C")
 
-
+# setup the window that you see.
 def initialise_screen():
     global current_temperature, current_pressure, current_humidity, weather_description
     global frm_content
@@ -196,19 +205,19 @@ def initialise_screen():
     if ovfiets:
         lbl_ovfiets = tk.Label( frm_voorzieningen, image=img_ov)
         lbl_ovfiets.pack(side=tk.LEFT, padx=10)
- #       tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT)
+ #*       tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT)
     if lift:
         lbl_lift = tk.Label( frm_voorzieningen, image=img_lift)
         lbl_lift.pack(side=tk.LEFT, padx=10)
- #       tk.Label( frm_voorzieningen, text="Lift").pack(side=tk.LEFT, padx=20)
+ #*       tk.Label( frm_voorzieningen, text="Lift").pack(side=tk.LEFT, padx=20)
     if pr:
         lbl_pr = tk.Label( frm_voorzieningen, image=img_pr)
         lbl_pr.pack(side=tk.LEFT, padx=10)
- #       tk.Label( frm_voorzieningen, text="P+R").pack(side=tk.LEFT, padx=20)
+ #*       tk.Label( frm_voorzieningen, text="P+R").pack(side=tk.LEFT, padx=20)
     if wc:
         lbl_toilet = tk.Label( frm_voorzieningen, image=img_toilet)
         lbl_toilet.pack(side=tk.LEFT, padx=10)
- #       tk.Label( frm_voorzieningen, text="Toilet").pack(side=tk.LEFT, padx=20)
+ #*       tk.Label( frm_voorzieningen, text="Toilet").pack(side=tk.LEFT, padx=20)
 
 
     frm_weer = tk.Frame(frm_content )

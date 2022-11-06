@@ -1,6 +1,7 @@
 import psycopg2
 import datetime
 
+# login with name and get the modnumber
 def inloggen():
     
     name = str(input("Naam: "))
@@ -24,7 +25,7 @@ def inloggen():
         modnum = records[0]
         return modnum
 
-
+# select if the shown message is allowed or not
 def beoordeel(mod):
     connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
 
@@ -49,13 +50,14 @@ def beoordeel(mod):
         print("Stationnaam = ", row[5], "\n")
         keuze = input("Goed of fout? (g of f): ")
         if keuze == 'g':
-            
+            # if message is allowed send update the database
             tijd = datetime.datetime.today()
             query = """update bericht set beoordeling = 'goed', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
             arg = (mod, tijd, str(row[0]))
             cursor.execute(query, arg)             # The second parameter must be list or tuple
             
         else:
+            # if the message is not allowed send update to the database
             tijd = datetime.datetime.today()
             query = """update bericht set beoordeling = 'fout', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
             arg = (mod, tijd, str(row[0]))
