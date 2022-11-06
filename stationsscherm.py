@@ -1,20 +1,92 @@
 import tkinter as tk
+import psycopg2
 
 # get list of stations uit database
 # get list of top 5 goedgekeurde berichten uit dbase
 # convert svg to png: 
 #  & 'C:\Program Files\Inkscape\bin\inkscape.exe'  -w 40 -h 40 .\ov-fiets--small.svg -o .\ov-fiets--small.png
 
+
 window = tk.Tk()
 window.title("Stationsscherm")
 #window.iconbitmap("yourimage.ico")
 
+gekozen_station = 1
+pr = False
+wc = False
+lift = False
+ovfiets = False
+station = ""
+
+def krijg_station_info(stationnum):
+    global pr
+    global wc
+    global lift
+    global ovfiets 
+    global station
+    connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
+
+    conn = psycopg2.connect(connection_string) 
+    cursor = conn.cursor()
+
+    query = f"select * from station where stationnummer = {stationnum}"      # Always use %s as a placeholder. Pyscopg will
+                                            # convert the datatype and add quotes if necessary!
+    cursor.execute(query)
+    record = cursor.fetchone()
+    station = record[1]
+    pr = record[2]
+    wc = record[3]
+    lift = record[4]
+    ovfiets = record[5]
+    conn.commit()
+    conn.close()
+    window.update()
+
+def berichten():
+    connection_string = "host='localhost' dbname='proja' user='postgres' password='Postgresqlekul!1'"
+
+    conn = psycopg2.connect(connection_string) 
+    cursor = conn.cursor()
+
+    query = f"select * from bericht where beoordeling = 'goed' order by tijd limit 5"      # Always use %s as a placeholder. Pyscopg will
+                                            # convert the datatype and add quotes if necessary!
+    cursor.execute(query)
+    records = cursor.fetchall()
+    for row in records:
+        tk.Label(frm_berichten, text=f"{row[2]}",  font=("Arial", 16) , width=100).pack()
+        tk.Label(frm_berichten, text=f"- {row[1]}\t\t\n", font=("Arial", 16, "italic"), anchor="e", width = 100 ).pack()
+
+    conn.commit()
+    conn.close()
+
+def volgendstation():
+    global gekozen_station
+    gekozen_station = (gekozen_station +1)
+    if gekozen_station > 3:
+        gekozen_station = 1
+    print(station)
+    krijg_station_info(gekozen_station)
+    
+
+def vorigstation():
+    global gekozen_station
+    gekozen_station = (gekozen_station -1)
+    if gekozen_station < 1:
+        gekozen_station = 3
+    print(gekozen_station)
+    krijg_station_info(gekozen_station)
+
+
+krijg_station_info(gekozen_station)
+
+
+
 # kies een van de stations
 frm_content = tk.Frame(window)
 frm_content.grid(column=0, row=0)
-station= "Arnhem"
-btn_left = tk.Button(frm_content, text="<", font=("Arial", 16, "bold"))
-btn_right = tk.Button(frm_content, text=">", font=("Arial", 16, "bold"))
+
+btn_left = tk.Button(frm_content, command=vorigstation ,text="<", font=("Arial", 16, "bold"))
+btn_right = tk.Button(frm_content, command=volgendstation, text=">", font=("Arial", 16, "bold"))
 lbl_station = tk.Label(frm_content, text=f"Station: {station}", font=("Arial", 25)) 
 
 btn_left.grid(row=0, column=0,  padx=5, pady=5)
@@ -24,19 +96,9 @@ btn_right.grid(row=0, column=3,  padx=5)
 # berichten frame
 frm_berichten = tk.Frame(frm_content, relief=tk.RAISED, borderwidth=2, height=300, bg='red')
 frm_berichten.grid(row=1, column=0, columnspan=4, sticky='ew')
-lbl_bericht1 = tk.Label(frm_berichten, text="bericht 1 met nog een stukje tekst om uit te vullen",  font=("Arial", 16) , width=100)
-lbl_naam = tk.Label(frm_berichten, text="- Anoniempje\t\t\n", font=("Arial", 16, "italic"), anchor="e", width = 100 )
-lbl_bericht2 = tk.Label(frm_berichten, text="bericht 2 Dit is een mooi station zeg!! ", font=("Arial", 16), width = 100)
-lbl_bericht3 = tk.Label(frm_berichten, text="Ik vind deze informatiezuil een erg goed initiatief. Kan ik eindelijk eens laten weten wat ik ervan vind...", font=("Arial", 16), width = 100)
+berichten()
 
-lbl_bericht1.pack()
-lbl_naam.pack()
-lbl_bericht2.pack()
-tk.Label(frm_berichten, text="- Anoniempje2\t\t\n", font=("Arial", 16, "italic"), anchor="e", width = 100 ).pack()
-lbl_bericht3.pack()
-tk.Label(frm_berichten, text="- Johan\t\t\n", font=("Arial", 16, "italic"), anchor="e", width = 100 ).pack()
-
-# fram twee kolommen voor voorzieningen en weer
+# frame twee kolommen voor voorzieningen en weer
 
 frm_voorzieningen = tk.Frame(frm_content)
 frm_voorzieningen.grid(row=2, column=0, columnspan=2, sticky= 'nw')
