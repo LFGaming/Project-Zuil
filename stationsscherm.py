@@ -1,5 +1,6 @@
 import tkinter as tk
 import psycopg2
+import requests, json
 
 # get list of stations uit database
 # get list of top 5 goedgekeurde berichten uit dbase
@@ -39,7 +40,7 @@ def berichten():
     conn = psycopg2.connect(connection_string) 
     cursor = conn.cursor()
 
-    query = f"select * from bericht where beoordeling = 'goed' order by tijd limit 5"      # Always use %s as a placeholder. Pyscopg will
+    query = f"select * from bericht where beoordeling = 'goed' order by tijd desc limit 5"      # Always use %s as a placeholder. Pyscopg will
                                             # convert the datatype and add quotes if necessary!
     cursor.execute(query)
     records = cursor.fetchall()
@@ -55,7 +56,7 @@ def volgendstation():
     gekozen_station = (gekozen_station +1)
     if gekozen_station > 3:
         gekozen_station = 1
-    print(station)
+
     krijg_station_info(gekozen_station)
     update_screen()
 
@@ -64,16 +65,113 @@ def vorigstation():
     gekozen_station = (gekozen_station -1)
     if gekozen_station < 1:
         gekozen_station = 3
-    print(gekozen_station)
+
     krijg_station_info(gekozen_station)
     update_screen()
 
+def weather(stad):
+    global current_temperature, current_pressure, current_humidity, weather_description
 
+    # Enter your API key here
+    api_key = "c13f1638dfe627b88033ae5f03ec93eb"
+    
+    # base_url variable to store url
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+       
+    # complete_url variable to store
+    # complete url address
+    complete_url = base_url + "appid=" + api_key + "&q=" + stad + "&units=metric" + "&lang=nl"
 
+    # get method of requests module
+    # return response object
+    response = requests.get(complete_url)
+    
+    # json method of response object
+    # convert json format data into
+    # python format data
+    x = response.json()
+
+    # Now x contains list of nested dictionaries
+    # Check the value of "cod" key is equal to
+    # "404", means city is found otherwise,
+    # city is not found
+    if x["cod"] != "404":
+ 
+        # store the value of "main"
+        # key in variable y
+        y = x["main"]
+    
+        # store the value corresponding
+        # to the "temp" key of y
+        current_temperature = y["temp"]
+    
+        # store the value corresponding
+        # to the "pressure" key of y
+        current_pressure = y["pressure"]
+    
+        # store the value corresponding
+        # to the "humidity" key of y
+        current_humidity = y["humidity"]
+    
+        # store the value of "weather"
+        # key in variable z
+        z = x["weather"]
+    
+        # store the value corresponding
+        # to the "description" key at
+        # the 0th index of z
+        weather_description = z[0]["description"]
+    
 
 def update_screen():
+    global current_temperature, current_pressure, current_humidity, weather_description
     global frm_content
     global frm_berichten
+    global lbl_station, frm_weer, frm_voorzieningen
+    global lbl_ovfiets, lbl_toilet, lbl_lift, lbl_pr, lbl_weer
+    
+    weather(station)
+
+    lbl_station.config(text=f"Station: {station}")
+
+    if lbl_ovfiets:
+        lbl_ovfiets.destroy()
+    if lbl_toilet:
+        lbl_toilet.destroy()
+    if lbl_pr:
+        lbl_pr.destroy()
+    if lbl_lift:
+        lbl_lift.destroy()
+
+
+    if ovfiets:
+        lbl_ovfiets = tk.Label( frm_voorzieningen, image=img_ov)
+        lbl_ovfiets.pack(side=tk.LEFT, padx=10)
+        
+    if lift:
+        lbl_lift = tk.Label( frm_voorzieningen, image=img_lift)
+        lbl_lift.pack(side=tk.LEFT, padx=10)
+
+    if pr:
+        lbl_pr = tk.Label( frm_voorzieningen, image=img_pr)
+        lbl_pr.pack(side=tk.LEFT, padx=10)
+
+    if wc:
+        lbl_toilet = tk.Label( frm_voorzieningen, image=img_toilet)
+        lbl_toilet.pack(side=tk.LEFT, padx=10)
+
+
+    lbl_weer.config(text = f"{weather_description}\n{current_temperature} graden C")
+
+
+def initialise_screen():
+    global current_temperature, current_pressure, current_humidity, weather_description
+    global frm_content
+    global frm_berichten
+    global lbl_station, frm_weer, frm_voorzieningen
+    global lbl_ovfiets, lbl_toilet, lbl_lift, lbl_pr, lbl_weer
+
+    weather(station)
 
     btn_left = tk.Button(frm_content, command=vorigstation ,text="<", font=("Arial", 16, "bold"))
     btn_right = tk.Button(frm_content, command=volgendstation, text=">", font=("Arial", 16, "bold"))
@@ -89,15 +187,29 @@ def update_screen():
     berichten()
 
     # frame twee kolommen voor voorzieningen en weer
-
     frm_voorzieningen = tk.Frame(frm_content)
     frm_voorzieningen.grid(row=2, column=0, columnspan=2, sticky= 'nw')
-    tk.Label(frm_voorzieningen, text="Voorzieingen op dit station", font=("Arial", 16), anchor="n").pack() 
+    tk.Label(frm_voorzieningen, text="Voorzieingen op dit station", font=("Arial", 16), anchor="w").pack() 
 
-    img_ov = tk.PhotoImage(file='icons\img_ovfiets.png')
 
-    tk.Label( frm_voorzieningen, image=img_ov).pack(side=tk.LEFT)
-    tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT, padx=20)
+
+    if ovfiets:
+        lbl_ovfiets = tk.Label( frm_voorzieningen, image=img_ov)
+        lbl_ovfiets.pack(side=tk.LEFT, padx=10)
+ #       tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT)
+    if lift:
+        lbl_lift = tk.Label( frm_voorzieningen, image=img_lift)
+        lbl_lift.pack(side=tk.LEFT, padx=10)
+ #       tk.Label( frm_voorzieningen, text="Lift").pack(side=tk.LEFT, padx=20)
+    if pr:
+        lbl_pr = tk.Label( frm_voorzieningen, image=img_pr)
+        lbl_pr.pack(side=tk.LEFT, padx=10)
+ #       tk.Label( frm_voorzieningen, text="P+R").pack(side=tk.LEFT, padx=20)
+    if wc:
+        lbl_toilet = tk.Label( frm_voorzieningen, image=img_toilet)
+        lbl_toilet.pack(side=tk.LEFT, padx=10)
+ #       tk.Label( frm_voorzieningen, text="Toilet").pack(side=tk.LEFT, padx=20)
+
 
     frm_weer = tk.Frame(frm_content )
     frm_weer.grid(row=2, column=2, columnspan=2, sticky= 'nw')
@@ -105,11 +217,9 @@ def update_screen():
 
     tk.Label(frm_weer, text="Weersvoorspelling", font=("Arial", 16), anchor="nw").pack() 
 
-    img_zon = tk.PhotoImage(file='icons\weather\clear.png')
-
-    tk.Label( frm_weer, image=img_zon).pack(side=tk.LEFT)
-    tk.Label( frm_weer, text="Mooi weer\n10 graden\nGeen regen").pack(side=tk.LEFT, padx=20)
-
+    tk.Label( frm_weer, image=img_weather).pack(side=tk.LEFT)
+    lbl_weer = tk.Label( frm_weer, text=f"{weather_description}\n{current_temperature} graden C",  font=("Arial", 16))
+    lbl_weer.pack(side=tk.LEFT, padx=20)
 
 window = tk.Tk()
 window.title("Stationsscherm")
@@ -122,10 +232,22 @@ wc = False
 lift = False
 ovfiets = False
 station = ""
+# de icoontjes die we gebruiken
+img_ov = tk.PhotoImage(file='icons\img_ovfiets.png')
+img_pr = tk.PhotoImage(file='icons\img_pr.png')
+img_toilet = tk.PhotoImage(file='icons\img_toilet.png')
+img_lift = tk.PhotoImage(file='icons\img_lift.png')
+img_weather = tk.PhotoImage(file='icons\light-clouds.png')
+lbl_pr = None
+lbl_lift = None
+lbl_ovfiets = None
+lbl_toilet = None
+
 
 frm_content = tk.Frame(window)
 frm_content.grid(column=0, row=0)
 
 krijg_station_info(gekozen_station)
-update_screen()
+
+initialise_screen()
 window.mainloop()

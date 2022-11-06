@@ -33,4 +33,4 @@ INSERT INTO station (
 VALUES
     ('Arnhem', true, false, true, false),
     ('Amsterdam', false, true, false, true),
-    ('Utrecht', true, false, true, false);
+    ('Utrecht', true, true, true, false);
