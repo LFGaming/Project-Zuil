@@ -15,7 +15,7 @@ feedback = str(input("Wat was je ervaring met het station? "))
 
 #name = input("Naam: ")
 #bericht = input("Bericht: ")
-stationnummer = random.randint(1,3)
+stationnummer = random.randint(1,5)
 tijd = str(vandaag)
 
 def response():
