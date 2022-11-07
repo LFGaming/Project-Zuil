@@ -5,17 +5,9 @@ import psycopg2
 
 vandaag = datetime.datetime.today()
 
-#* with open("stations.txt","r") as file:
-#*   lines = file.read().splitlines()
-#*   station = random.choice(lines)
-
 # ask for the name and feedback of the user
 name = str(input("Wat is je naam? (optioneel) "))
 feedback = str(input("Wat was je ervaring met het station? "))
-
-
-#*name = input("Naam: ")
-#*bericht = input("Bericht: ")
 
 #choose a station number
 stationnummer = random.randint(1,3)
@@ -54,10 +46,6 @@ def response():
             cursor.execute(query, data)             # The second parameter must be list or tuple
             conn.commit()
             conn.close()
-
-            #*with open('feedbacks.txt', 'a') as t:
-            #*    t.write(
-            #*        f"{vandaag}\nBij station {station}\nNaam: {name} \nFeedback: {feedback}\n \n --------------------------- \n")
 
 
 r = response()

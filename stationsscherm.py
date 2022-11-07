@@ -2,12 +2,6 @@ import tkinter as tk
 import psycopg2
 import requests, json
 
-# get list of stations uit database
-# get list of top 5 goedgekeurde berichten uit dbase
-# convert svg to png: 
-#  & 'C:\Program Files\Inkscape\bin\inkscape.exe'  -w 40 -h 40 .\ov-fiets--small.svg -o .\ov-fiets--small.png
-
-
 # get information of the station
 def krijg_station_info(stationnum):
     global pr
@@ -205,19 +199,15 @@ def initialise_screen():
     if ovfiets:
         lbl_ovfiets = tk.Label( frm_voorzieningen, image=img_ov)
         lbl_ovfiets.pack(side=tk.LEFT, padx=10)
- #*       tk.Label( frm_voorzieningen, text="OV fiets").pack(side=tk.LEFT)
     if lift:
         lbl_lift = tk.Label( frm_voorzieningen, image=img_lift)
         lbl_lift.pack(side=tk.LEFT, padx=10)
- #*       tk.Label( frm_voorzieningen, text="Lift").pack(side=tk.LEFT, padx=20)
     if pr:
         lbl_pr = tk.Label( frm_voorzieningen, image=img_pr)
         lbl_pr.pack(side=tk.LEFT, padx=10)
- #*       tk.Label( frm_voorzieningen, text="P+R").pack(side=tk.LEFT, padx=20)
     if wc:
         lbl_toilet = tk.Label( frm_voorzieningen, image=img_toilet)
         lbl_toilet.pack(side=tk.LEFT, padx=10)
- #*       tk.Label( frm_voorzieningen, text="Toilet").pack(side=tk.LEFT, padx=20)
 
 
     frm_weer = tk.Frame(frm_content )
