@@ -4,7 +4,7 @@ import random
 
 vandaag = datetime.datetime.today()
 
-with open("stations.txt","r") as file:
+with open("archive/stations.txt","r") as file:
     lines = file.read().splitlines()
     station = random.choice(lines)
 
