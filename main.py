@@ -67,9 +67,9 @@ def read():
         print("IDnummer = ", row[0])
         print("Naam = ", row[1])
         print("Bericht  = ", row[2])
-        print("Tijd = ", row[3])
-        print("Modnummer = ", row[4])
-        print("Stationnaam = ", row[5], "\n")
+        print("Tijd = ", row[5])
+        print("Modnummer = ", row[6])
+        print("Stationnaam = ", row[7], "\n")
     conn.commit()
     conn.close()
 
