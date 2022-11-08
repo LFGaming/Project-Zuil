@@ -55,15 +55,16 @@ def beoordeel(mod):
             query = """update bericht set beoordeling = 'goed', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
             arg = (mod, tijd, str(row[0]))
             cursor.execute(query, arg)             # The second parameter must be list or tuple
-            
+            conn.commit()
+
         else:
             # if the message is not allowed send update to the database
             tijd = datetime.datetime.today()
             query = """update bericht set beoordeling = 'fout', modnummer = %s, beoordeling_tijd = %s where idnummer = %s"""
             arg = (mod, tijd, str(row[0]))
             cursor.execute(query, arg)             # The second parameter must be list or tuple
+            conn.commit()
 
-    conn.commit()
     conn.close()
 
 mod = inloggen()
